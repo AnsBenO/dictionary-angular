@@ -1,0 +1,89 @@
+<div class="container" *ngIf="definitionsData.length > 0">
+    <div class="word-details" *ngFor="let definition of definitionsData">
+        <h2 class="word">{{ definition.word }}</h2>
+        <ng-container *ngIf="definition.phonetics.length > 0">
+            <p class="phonetic">{{ definition.phonetics[0].text }}</p>
+            <ng-container *ngIf="definition.phonetics[0]?.audio !== ''">
+                <div>
+                    <button
+                        (click)="toggleAudio()"
+                        class="audio-button"
+                        [title]="isPlaying ? 'Pause' : 'Play'"
+                    >
+                        <ng-container *ngIf="isPlaying; else playIcon">
+                            <fa-icon
+                                class="volume-icon"
+                                [icon]="volumeXmark"
+                            ></fa-icon>
+                        </ng-container>
+                        <ng-template #playIcon>
+                            <fa-icon
+                                class="volume-icon"
+                                [icon]="volumeHigh"
+                            ></fa-icon>
+                        </ng-template>
+                    </button>
+                    <ng-container *ngIf="isPlaying">
+                        <audio
+                            [src]="definition.phonetics[0].audio"
+                            autoplay
+                            preload="auto"
+                            (ended)="toggleAudio()"
+                        ></audio>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </ng-container>
+        <div class="meanings">
+            <p>Meanings:</p>
+            <ng-container
+                *ngFor="let meaning of definition.meanings; let index = index"
+            >
+                <div class="meanings" *ngIf="meaning.partOfSpeech">
+                    <ul class="definition">
+                        <li>
+                            <strong
+                                >{{ index + 1 }}-
+                                {{ meaning.partOfSpeech }}</strong
+                            >
+                            <ul class="definitions-list">
+                                <li *ngFor="let def of meaning.definitions">
+                                    {{ def.definition }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="synonyms">
+                        Synonyms:
+                        <ng-container
+                            *ngIf="meaning.synonyms.length > 0; else noSynonyms"
+                        >
+                            <ul class="definition">
+                                <li *ngFor="let syn of meaning.synonyms">
+                                    {{ syn }}
+                                </li>
+                            </ul>
+                        </ng-container>
+                        <ng-template #noSynonyms> N/A </ng-template>
+                    </ul>
+                    <ul class="antonyms">
+                        Antonyms:
+                        <ng-container
+                            *ngIf="meaning.antonyms.length > 0; else noAntonyms"
+                        >
+                            <ul class="definition">
+                                <li *ngFor="let ant of meaning.antonyms">
+                                    {{ ant }}
+                                </li>
+                            </ul>
+                        </ng-container>
+                        <ng-template #noAntonyms> N/A </ng-template>
+                    </ul>
+                </div>
+            </ng-container>
+        </div>
+        <p class="source">
+            Source: <a [href]="definition.sourceUrls[0]">Wiktionary</a>
+        </p>
+    </div>
+</div>
