@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from "@angular/core";
 import { SearchService } from "./services/search.service";
-import { WordData } from "./types/Definitions.type";
+import { WordData } from "./types/Definitions.interface";
 import { Subject } from "rxjs/internal/Subject";
 import { Theme } from "./types/Theme.enum";
 

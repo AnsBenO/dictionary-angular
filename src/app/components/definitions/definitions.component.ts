@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { WordData } from "src/app/types/Definitions.type";
+import { WordData } from "src/app/types/Definitions.interface";
 import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
 
