@@ -3,7 +3,8 @@
 This project is a recreation of the dictionary app that I originally created using react.js: https://github.com/AnsBenO/dictionary-app
 Live Demo: https://ansbeno.github.io/dictionary-angular/
 
-#Credits
+# Credits
+
 API: https://dictionaryapi.dev/
 Toggle Switch: https://codepen.io/alvarotrigo/pen/zYPydpB?editors=1100
 Loader: https://www.cssportal.com/css-loader-generator/
