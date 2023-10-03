@@ -22,7 +22,6 @@ h1.header {
     border: 1px solid transparent;
     border-radius: 20px;
     overflow: hidden;
-    transition: all .3s ease-in-out;
 }
 
 .search-input {
@@ -33,7 +32,6 @@ h1.header {
     border-radius: 20px;
     border: 2px solid var(--light-gray);
     outline: none;
-    transition: all .7s ease-in-out;
 }
 
 .search-button {
@@ -45,12 +43,10 @@ h1.header {
     width: 35px;
     border: none;
     cursor: pointer;
-    transition: all .7s ease-in-out;
 }
 
 .search-button .search-icon {
     color: var(--dark-gray);
-    transition: all .7s ease-in-out;
 
 }
 

@@ -70,5 +70,4 @@ a:hover {
 .audio-button .volume-icon {
     font-size: 20px;
     color: var(--dark-gray);
-    transition: all .7s ease-in-out;
 }
