@@ -7,14 +7,15 @@ import { Theme } from "src/app/types/Theme.enum";
     styleUrls: ["./toggle.component.css"],
 })
 export class ToggleComponent implements OnInit {
-    ngOnInit(): void {
-        this.updateLabel();
-    }
     @Input() theme!: Theme;
     @Output() themeChange = new EventEmitter<Theme>();
 
     label!: string;
-
+    isChecked!: boolean;
+    ngOnInit(): void {
+        this.updateLabel();
+        this.updateCheck();
+    }
     handleClick() {
         const updatedTheme =
             this.theme === Theme.light ? Theme.dark : Theme.light;
@@ -25,5 +26,8 @@ export class ToggleComponent implements OnInit {
 
     updateLabel() {
         this.label = this.theme !== Theme.light ? "DARK MODE" : "LIGHT MODE";
+    }
+    updateCheck() {
+        this.isChecked = this.theme === Theme.light ? true : false;
     }
 }
