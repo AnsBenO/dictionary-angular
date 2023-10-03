@@ -3,7 +3,6 @@
     padding: 15px;
     border-top: 2px solid var(--light-gray);
     max-width: 900px;
-    transition: all .7s ease-in-out;
 }
 
 .word {
