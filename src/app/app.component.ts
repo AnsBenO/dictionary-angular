@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, Renderer2 } from "@angular/core";
 import { SearchService } from "./services/search.service";
 import { WordData } from "./types/Definitions.interface";
 import { Subject } from "rxjs/internal/Subject";
+import { takeUntil } from "rxjs/operators";
 import { Theme } from "./types/Theme.enum";
 
 @Component({
@@ -50,6 +51,7 @@ export class AppComponent implements OnDestroy, OnInit {
     handleSearchSubmit(formValue: string) {
         this.searchService
             .getDefinitions(formValue)
+            .pipe(takeUntil(this.ngUnsubscribe))
             .subscribe(difinitions => (this.difinitionsData = difinitions));
         this.isSubmitted = true;
     }
