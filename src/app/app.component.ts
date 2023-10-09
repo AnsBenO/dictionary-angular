@@ -15,7 +15,7 @@ export class AppComponent implements OnDestroy, OnInit {
     difinitionsData!: WordData[] | null;
     theme!: Theme;
     isSubmitted: boolean = false;
-    private ngUnsubscribe = new Subject<void>();
+    private destroy$ = new Subject<void>();
 
     constructor(
         public searchService: SearchService,
@@ -52,12 +52,12 @@ export class AppComponent implements OnDestroy, OnInit {
     handleSearchSubmit(formValue: string) {
         this.searchService
             .getDefinitions(formValue)
-            .pipe(takeUntil(this.ngUnsubscribe))
+            .pipe(takeUntil(this.destroy$))
             .subscribe(difinitions => (this.difinitionsData = difinitions));
         this.isSubmitted = true;
     }
     ngOnDestroy() {
-        this.ngUnsubscribe.next();
-        this.ngUnsubscribe.complete();
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 }
