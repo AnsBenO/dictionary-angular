@@ -25,7 +25,7 @@ export class ToggleComponent implements OnInit {
     }
 
     updateLabel() {
-        this.label = this.theme !== Theme.light ? "DARK MODE" : "LIGHT MODE";
+        this.label = this.theme !== Theme.light ? "LIGHT MODE" : "DARK MODE";
     }
     updateCheck() {
         this.isChecked = this.theme === Theme.light ? true : false;
