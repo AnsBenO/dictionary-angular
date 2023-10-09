@@ -11,6 +11,7 @@ import { Theme } from "./types/Theme.enum";
     styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnDestroy, OnInit {
+    title = "dictionary-angular";
     difinitionsData!: WordData[] | null;
     theme!: Theme;
     isSubmitted: boolean = false;
@@ -55,7 +56,6 @@ export class AppComponent implements OnDestroy, OnInit {
             .subscribe(difinitions => (this.difinitionsData = difinitions));
         this.isSubmitted = true;
     }
-    title = "dictionary-angular";
     ngOnDestroy() {
         this.ngUnsubscribe.next();
         this.ngUnsubscribe.complete();
