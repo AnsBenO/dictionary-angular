@@ -1,0 +1,19 @@
+<div class="navigation">
+    <nav>
+        <ul class="links">
+            <li><a href="http://">Saved Definitions</a></li>
+            <li><a href="http://">About</a></li>
+
+        </ul>
+        <a href="" class="action_btn">Git Hub</a>
+        <div class="toggle_btn" [ngClass]="isHidden ? '' : 'active'" (click)="handleClick()">
+            <fa-icon *ngIf="isHidden" [icon]="bars"></fa-icon>
+            <fa-icon *ngIf="!isHidden" [icon]="xMark"></fa-icon>
+        </div>
+    </nav>
+    <div class="dropdown_menu" [ngClass]="isHidden ? '' : 'active'">
+        <li><a href="http://">Saved Definitions</a></li>
+        <li><a href="http://">About</a></li>
+        <li><a href="" class="action_btn">Git Hub</a></li>
+    </div>
+</div>

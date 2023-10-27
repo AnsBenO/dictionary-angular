@@ -1,5 +1,8 @@
 <main>
-    <app-toggle (themeChange)="switchTheme($event)" [theme]="theme" />
+    <header>
+        <app-toggle (themeChange)="switchTheme($event)" [theme]="theme" />
+        <app-navigation />
+    </header>
     <app-search-form (searchSubmit)="handleSearchSubmit($event)" />
     <div class="content">
         <div class="loader" *ngIf="(searchService.isLoading$ | async)"></div>

@@ -1,0 +1,128 @@
+i {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-black);
+}
+
+a:hover {
+    color: var(--dark-gray);
+}
+
+/* HEADER */
+.navigation {
+    margin-right: 15px;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+    color: var(--primary-white);
+    /* Add the variable for white color */
+}
+
+nav .logo a {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: var(--primary-white);
+}
+
+nav .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav .toggle_btn {
+    color: var(--primary-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: var(--outline);
+    color: white;
+    padding: 0.5rem 1rem;
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+}
+
+.action_btn:hover {
+    transform: scale(1.05);
+    color: white;
+}
+
+.action_btn:active {
+    transform: scale(0.95);
+}
+
+.toggle_btn>* {
+    font-size: 30px;
+}
+
+/** DROP-DOWN MENU **/
+.dropdown_menu {
+    height: 0;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/** MEDIA QUERY 992px **/
+@media (max-width: 992px) {
+
+    nav .links,
+    nav .action_btn {
+        display: none;
+    }
+
+    nav .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu.active {
+        height: 135px;
+    }
+}
+
+/** MEDIA QUERY 576px **/
+@media (max-width: 576px) {
+    .dropdown_menu {
+        width: unset;
+        left: 2rem;
+    }
+}
