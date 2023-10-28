@@ -1,7 +1,7 @@
 <div class="toggle-switch" title="{{theme}}">
 
-    <input type="checkbox" id="toggle-switch" [checked]="isChecked" />
-    <label for="toggle-switch" class="slider" (click)="handleClick()"></label>
+    <input type="checkbox" id="toggle-switch" (click)="handleClick()" [checked]="isChecked" />
+    <label for="toggle-switch" class="slider"></label>
     <p class="light-dark">
         {{label}}
     </p>
