@@ -7,7 +7,7 @@ a {
     color: var(--primary-black);
 }
 
-a:hover {
+li a:not(.action_btn):hover {
     color: var(--dark-gray);
 }
 
@@ -48,20 +48,18 @@ nav .toggle_btn {
 }
 
 .action_btn {
-    background-color: var(--outline);
-    color: white;
+    color: var(--outline);
     padding: 0.5rem 1rem;
     outline: none;
     font-size: 1rem;
     cursor: pointer;
-    border: none;
+    border: 1px solid var(--outline);
     border-radius: 15px;
     transition: transform 0.2s ease;
 }
 
 .action_btn:hover {
     transform: scale(1.05);
-    color: white;
 }
 
 .action_btn:active {
