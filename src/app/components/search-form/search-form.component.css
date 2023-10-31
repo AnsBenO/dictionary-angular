@@ -47,8 +47,11 @@ h1.header {
 }
 
 .search-button .search-icon {
-    color: var(--dark-gray);
+    color: var(--primary-white);
+}
 
+.search-button:hover .search-icon {
+    color: var(--primary-black);
 }
 
 .search-input:focus {

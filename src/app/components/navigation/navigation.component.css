@@ -68,7 +68,7 @@ nav .toggle_btn {
     transform: scale(0.95);
 }
 
-.toggle_btn>* {
+.toggle-icon {
     font-size: 30px;
 }
 
