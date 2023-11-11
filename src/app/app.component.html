@@ -1,6 +1,6 @@
-<main>
+<main [attr.data-theme]="theme.toString()">
     <header>
-        <app-toggle (themeChange)="switchTheme($event)" [theme]="theme" />
+        <app-toggle [(theme)]="theme" />
         <app-navigation />
     </header>
     <app-search-form (searchSubmit)="handleSearchSubmit($event)" />

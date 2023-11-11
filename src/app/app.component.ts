@@ -45,10 +45,6 @@ export class AppComponent implements OnDestroy, OnInit {
         }
     }
 
-    switchTheme(theme: Theme) {
-        this.theme = theme;
-        this.applyTheme(theme);
-    }
     handleSearchSubmit(formValue: string) {
         this.searchService
             .getDefinitions(formValue)
