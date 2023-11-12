@@ -1,7 +1,7 @@
 <div class="search-container">
     <h1 class="header">Web Dictionary</h1>
     <form class="search-form" #searchForm="ngForm" (submit)="handleSubmit(searchForm.value)">
-        <input type="text" class="search-input" name="query" placeholder="Enter a word..." #searchInput ngModel />
+        <input type="text" class="search-input" name="query" placeholder="Enter a word..." ngModel />
         <button class="search-button" title="Search" [disabled]="!searchForm.value.query">
             <fa-icon class="search-icon" [icon]="magnifying"></fa-icon>
         </button>
