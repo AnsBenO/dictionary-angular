@@ -1,6 +1,6 @@
 <main [attr.data-theme]="theme.toString()">
     <header>
-        <app-toggle [(theme)]="theme" />
+        <app-toggle [(theme)]="theme" (themeChange)="saveThemeToLocalStorage()" />
         <app-navigation />
     </header>
     <app-search-form (searchSubmit)="handleSearchSubmit($event)" />

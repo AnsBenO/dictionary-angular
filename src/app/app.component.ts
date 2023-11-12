@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, Renderer2 } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { SearchService } from "./services/search.service";
 import { WordData } from "./types/Definitions.interface";
 import { Subject } from "rxjs/internal/Subject";
@@ -17,29 +17,15 @@ export class AppComponent implements OnDestroy, OnInit {
     isSubmitted: boolean = false;
     private destroy$ = new Subject<void>();
 
-    constructor(
-        public searchService: SearchService,
-        private renderer: Renderer2
-    ) {}
-    private saveThemeToLocalStorage(theme: string) {
-        localStorage.setItem("theme", theme);
-    }
-
-    public applyTheme(theme: Theme) {
-        this.renderer.setAttribute(
-            document.querySelector("main"),
-            "data-theme",
-            this.theme.toString()
-        );
-
-        this.saveThemeToLocalStorage(theme);
+    constructor(public searchService: SearchService) {}
+    saveThemeToLocalStorage() {
+        localStorage.setItem("theme", this.theme);
     }
 
     ngOnInit(): void {
         const savedTheme = localStorage.getItem("theme") as Theme;
         if (savedTheme) {
             this.theme = savedTheme as Theme;
-            this.applyTheme(savedTheme);
         } else {
             this.theme = Theme.light;
         }
