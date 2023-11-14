@@ -10,6 +10,8 @@ export class SearchFormComponent {
     @Output() searchSubmit = new EventEmitter<string>();
 
     public handleSubmit(searchValue: { query: string }) {
-        searchValue.query.trim() && this.searchSubmit.emit(searchValue.query);
+        if (searchValue.query.trim() !== "") {
+            this.searchSubmit.emit(searchValue.query);
+        }
     }
 }

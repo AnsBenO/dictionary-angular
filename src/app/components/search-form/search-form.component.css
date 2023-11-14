@@ -46,8 +46,8 @@ h1.header {
     cursor: pointer;
 }
 
-.search-button .search-icon {
-    color: var(var(--primary-gray));
+.search-icon {
+    color: var(--primary-gray);
 }
 
 .search-button:hover .search-icon {
