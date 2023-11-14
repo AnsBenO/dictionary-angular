@@ -25,13 +25,13 @@ nav {
     align-items: center;
     gap: 2rem;
     justify-content: space-between;
-    color: var(--primary-white);
+    color: var(--primary-gray);
 }
 
 nav .logo a {
     font-weight: bolder;
     font-size: 1.5rem;
-    color: var(--primary-white);
+    color: var(--primary-gray);
 }
 
 nav .links {
@@ -42,7 +42,7 @@ nav .links {
 }
 
 nav .toggle_btn {
-    color: var(--primary-white);
+    color: var(--dark-gray);
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
