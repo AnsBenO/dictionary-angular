@@ -18,7 +18,6 @@ import { NavigationComponent } from "./app-components/navigation/navigation.comp
 
     bootstrap: [AppComponent],
     imports: [
-        HttpClientModule,
         BrowserModule,
         AppRoutingModule,
         FontAwesomeModule,

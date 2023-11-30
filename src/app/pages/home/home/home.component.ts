@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { Subject, takeUntil } from "rxjs";
+import { SearchService } from "src/app/services/search.service";
 import { WordData } from "src/app/types/Definitions.interface";
 import { Theme } from "src/app/types/Theme.enum";
-import { SearchService } from "../services/search.service";
 
 @Component({
     selector: "app-home",
