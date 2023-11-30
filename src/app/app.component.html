@@ -3,12 +3,6 @@
         <app-toggle [(theme)]="theme" (themeChange)="saveThemeToLocalStorage()" />
         <app-navigation />
     </header>
-    <app-search-form (searchSubmit)="handleSearchSubmit($event)" />
-    <div class="content">
-        <div class="loader" *ngIf="(searchService.isLoading$ | async)"></div>
-        <app-definitions *ngIf="difinitionsData" [definitionsData]="difinitionsData || []"></app-definitions>
-        <ng-container *ngIf="!(searchService.isLoading$ | async)">
-            <app-message *ngIf="!(difinitionsData && difinitionsData.length)" [isSubmitted]="isSubmitted"></app-message>
-        </ng-container>
-    </div>
+    <router-outlet></router-outlet>
+
 </main>

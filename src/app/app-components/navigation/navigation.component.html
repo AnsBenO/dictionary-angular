@@ -1,8 +1,9 @@
 <div class="navigation">
     <nav>
         <ul class="links">
-            <li><a href="http://">Saved Definitions</a></li>
-            <li><a href="http://">About</a></li>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/saved-definitions">Saved Definitions</a></li>
+            <li><a routerLink="/about">About</a></li>
         </ul>
         <a href="https://github.com/AnsBenO/dictionary-angular" class="action_btn">Git Hub</a>
         <div class="toggle_btn" [ngClass]="{'active': !isHidden}" (click)="handleClick()">
@@ -11,8 +12,9 @@
         </div>
     </nav>
     <div class="dropdown_menu" [ngClass]="{'active': !isHidden}">
-        <li><a href="http://">Saved Definitions</a></li>
-        <li><a href="http://">About</a></li>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/saved-definitions">Saved Definitions</a></li>
+        <li><a routerLink="/about">About</a></li>
         <li><a href="https://github.com/AnsBenO/dictionary-angular" class="action_btn">Git Hub</a></li>
     </div>
 </div>
