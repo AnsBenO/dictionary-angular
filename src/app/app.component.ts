@@ -9,7 +9,6 @@ import { Theme } from "./types/Theme.enum";
 })
 export class AppComponent implements OnInit {
     theme!: Theme;
-    isSubmitted: boolean = false;
 
     saveThemeToLocalStorage() {
         localStorage.setItem("theme", this.theme);

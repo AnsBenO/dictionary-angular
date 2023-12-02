@@ -10,7 +10,6 @@ import { WordData } from "src/app/types/Definitions.interface";
 })
 export class HomeComponent {
     difinitionsData!: WordData[] | null;
-
     isSubmitted: boolean = false;
     private destroy$ = new Subject<void>();
 
