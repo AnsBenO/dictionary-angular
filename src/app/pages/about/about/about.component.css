@@ -1,0 +1,76 @@
+.about-container {
+    display: grid;
+    max-width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px auto;
+}
+
+.about-container:hover section:not(:hover) {
+    filter: blur(2px);
+    transition: all 0.3s ease;
+}
+
+.about-container section:hover {
+    filter: none;
+    transform: scale(1.01);
+}
+
+.about-section,
+.features-section,
+.developer-section,
+.connect-section,
+.contact-section,
+.thanks-section {
+    padding: 60px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+}
+
+.connect-list {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.connect-list li .ng-fa-icon {
+    font-size: 50px;
+
+}
+
+a {
+    color: var(--dark-gray)
+}
+
+.about-section {
+    grid-column: span 2;
+}
+
+.features-section {
+    grid-column: span 3;
+}
+
+ul {
+    list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        padding: 0 10px 0 10px;
+    }
+
+    .about-section {
+        grid-column: span 1;
+    }
+
+    .features-section {
+        grid-column: span 1;
+    }
+
+    section {
+        width: 100%;
+    }
+}
