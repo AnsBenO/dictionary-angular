@@ -1,6 +1,9 @@
 <div class="container" *ngIf="definitionsData.length > 0">
     <div class="word-details" *ngFor="let definition of definitionsData">
         <h2 class="word">{{ definition.word }}</h2>
+        <button (click)="saveToLocalStorage(definition.word)" class="save-button"><fa-icon
+                [icon]="isWordSaved(definition.word) ? solidSave : regularSave"></fa-icon></button>
+
         <ng-container *ngIf="definition.phonetics.length > 0">
             <p class="phonetic">{{ definition.phonetics[0].text }}</p>
             <ng-container *ngIf="definition.phonetics[0]?.audio !== ''">

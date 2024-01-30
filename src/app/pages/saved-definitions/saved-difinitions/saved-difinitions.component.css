@@ -1,0 +1,54 @@
+.saved-definitions-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    border: 1px solid var(--dark-gray);
+}
+
+.saved-definitions-title {
+    color: var(--dark-gray);
+}
+
+form {
+    margin-top: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--light-gray);
+    border-radius: 20px;
+    background: none;
+    color: var(--dark-gray);
+    outline: none;
+
+    transition: border-color .2s ease-in;
+}
+
+.search-input:focus {
+    border-color: var(--dark-gray);
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.definition-item {
+    background-color: var(--bg);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.definition-item:hover {
+    background-color: var(--light-gray);
+}

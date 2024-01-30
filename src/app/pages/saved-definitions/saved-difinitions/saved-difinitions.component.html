@@ -1,1 +1,12 @@
-<p>saved-difinitions works!</p>
+<div class="saved-definitions-container">
+    <h2 class="saved-definitions-title">Saved Definitions</h2>
+    <form #searchForm="ngForm">
+        <input class="search-input" type="text" placeholder="Search for a word" name="search-input"
+            [(ngModel)]="searchTerm" (input)="searchDefinitions()">
+    </form>
+    <ul>
+        <li *ngFor="let definition of savedDefinitions" class="definition-item">
+            {{ definition.word }} - {{ definition.savedAt | date }}
+        </li>
+    </ul>
+</div>

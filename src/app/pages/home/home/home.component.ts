@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy } from "@angular/core";
 import { Subject, takeUntil } from "rxjs";
 import { SearchService } from "src/app/services/search.service";
 import { WordData } from "src/app/types/Definitions.interface";
@@ -8,7 +8,7 @@ import { WordData } from "src/app/types/Definitions.interface";
     templateUrl: "./home.component.html",
     styleUrls: ["./home.component.css"],
 })
-export class HomeComponent {
+export class HomeComponent implements OnDestroy {
     difinitionsData!: WordData[] | null;
     isSubmitted: boolean = false;
     private destroy$ = new Subject<void>();

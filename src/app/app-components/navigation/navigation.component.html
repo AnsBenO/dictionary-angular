@@ -5,16 +5,42 @@
             <li><a routerLink="/saved-definitions">Saved Definitions</a></li>
             <li><a routerLink="/about">About</a></li>
         </ul>
-        <a href="https://github.com/AnsBenO/dictionary-angular" class="action_btn">Git Hub</a>
-        <div class="toggle_btn" [ngClass]="{'active': !isHidden}" (click)="handleClick()">
-            <fa-icon *ngIf="isHidden" [icon]="bars" class="toggle-icon"></fa-icon>
-            <fa-icon *ngIf="!isHidden" [icon]="xMark" class="toggle-icon"></fa-icon>
+        <a
+            href="https://github.com/AnsBenO/dictionary-angular"
+            class="action_btn"
+            target="_blank"
+            rel="noreferrer"
+            >Git Hub</a
+        >
+        <div
+            class="toggle_btn"
+            [ngClass]="{'active': !isHidden}"
+            (click)="handleClick()"
+        >
+            <fa-icon
+                *ngIf="isHidden"
+                [icon]="bars"
+                class="toggle-icon"
+            ></fa-icon>
+            <fa-icon
+                *ngIf="!isHidden"
+                [icon]="xMark"
+                class="toggle-icon"
+            ></fa-icon>
         </div>
     </nav>
     <div class="dropdown_menu" [ngClass]="{'active': !isHidden}">
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/saved-definitions">Saved Definitions</a></li>
         <li><a routerLink="/about">About</a></li>
-        <li><a href="https://github.com/AnsBenO/dictionary-angular" class="action_btn">Git Hub</a></li>
+        <li>
+            <a
+                href="https://github.com/AnsBenO/dictionary-angular"
+                class="action_btn"
+                target="_blank"
+                rel="noreferrer"
+                >Git Hub</a
+            >
+        </li>
     </div>
 </div>
