@@ -14,6 +14,16 @@
 
 form {
     margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 0px;
+
+    transition: border-color .2s ease-in;
+
+}
+
+form:focus-within {
+    border-color: var(--outline);
 }
 
 .search-input {
@@ -25,13 +35,9 @@ form {
     color: var(--dark-gray);
     outline: none;
 
-    transition: border-color .2s ease-in;
 }
 
-.search-input:focus {
-    border-color: var(--dark-gray);
-
-}
+.search-input:focus {}
 
 ul {
     list-style-type: none;
@@ -51,4 +57,24 @@ ul {
 
 .definition-item:hover {
     background-color: var(--light-gray);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.remove-button,
+.word-search-button {
+    border: none;
+    background: none;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+    color: var(--dark-gray);
+}
+
+.definition-item:hover .remove-button,
+.definition-item:hover .word-search-button {
+    display: block;
 }

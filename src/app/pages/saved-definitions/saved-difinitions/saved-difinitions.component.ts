@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SavedDefinition } from "src/app/types/SavedDefinition.interface";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Router } from "@angular/router";
 @Component({
     selector: "app-saved-difinitions",
     templateUrl: "./saved-difinitions.component.html",
@@ -8,8 +9,11 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 })
 export class SavedDifinitionsComponent implements OnInit {
     savedDefinitions: SavedDefinition[] = [];
-    searchTerm: string = "";
     xmark = faXmark;
+    search = faSearch;
+
+    constructor(private router: Router) {}
+
     ngOnInit(): void {
         this.loadSavedDefinitions();
     }
@@ -21,17 +25,27 @@ export class SavedDifinitionsComponent implements OnInit {
         }
     }
 
-    searchDefinitions(): void {
-        if (this.searchTerm.trim() === "") {
+    searchDefinitions(word: string): void {
+        if (word.trim() === "") {
             this.loadSavedDefinitions();
         } else {
             this.savedDefinitions = this.savedDefinitions.filter(definition =>
-                definition.word
-                    .toLowerCase()
-                    .includes(this.searchTerm.toLowerCase())
+                definition.word.toLowerCase().includes(word.toLowerCase())
             );
         }
     }
 
-    removeDefinition(word: string): void {}
+    removeDefinition(word: string): void {
+        this.savedDefinitions = this.savedDefinitions.filter(
+            definition => definition.word.toLowerCase() !== word.toLowerCase()
+        );
+        localStorage.setItem(
+            "savedDefinitions",
+            JSON.stringify(this.savedDefinitions)
+        );
+    }
+
+    navigateToRootWithQuery(word: string): void {
+        this.router.navigate(["/"], { queryParams: { search: word } });
+    }
 }
