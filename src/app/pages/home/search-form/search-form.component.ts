@@ -1,10 +1,4 @@
-import {
-    Component,
-    EventEmitter,
-    OnDestroy,
-    OnInit,
-    Output,
-} from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Subject, take } from "rxjs";
@@ -16,7 +10,6 @@ import { Subject, take } from "rxjs";
 export class SearchFormComponent implements OnInit {
     magnifying = faMagnifyingGlass;
     @Output() searchSubmit = new EventEmitter<string>();
-    destroy$: Subject<void> = new Subject();
 
     constructor(private route: ActivatedRoute) {}
 

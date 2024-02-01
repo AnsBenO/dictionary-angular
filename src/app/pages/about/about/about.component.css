@@ -55,6 +55,34 @@ ul {
     list-style: none;
 }
 
+@media screen and (max-width: 1095px) {
+    .about-container {
+        max-width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 0 10px;
+    }
+
+    .about-section,
+    .features-section,
+    .developer-section,
+    .connect-section,
+    .contact-section,
+    .thanks-section {
+        padding: 40px;
+    }
+
+    section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 939px) {
+    .about-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .about-container {
         max-width: 100%;
