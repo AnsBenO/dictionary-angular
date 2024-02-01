@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Subject, take } from "rxjs";
+import { take } from "rxjs";
 @Component({
     selector: "app-search-form",
     templateUrl: "./search-form.component.html",
