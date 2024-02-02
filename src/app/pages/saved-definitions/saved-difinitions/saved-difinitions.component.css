@@ -78,3 +78,9 @@ ul {
 .definition-item:hover .word-search-button {
     display: block;
 }
+
+
+.no-saved-words {
+    text-align: center;
+    font-size: 1rem;
+}

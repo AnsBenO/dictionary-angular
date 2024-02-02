@@ -4,15 +4,21 @@
         <input class="search-input" type="text" placeholder="Search for a word" name="searchInput" ngModel>
     </form>
     <ul>
-        <li *ngFor="let definition of savedDefinitions" class="definition-item">
-            {{ definition.word }} - {{ definition.savedAt | date }}
-            <div class="buttons">
-                <button class="word-search-button" (click)="navigateToRootWithQuery(definition.word)"> <fa-icon
-                        [icon]="search"></fa-icon> </button>
-                <button class="remove-button" (click)="removeDefinition(definition.word)"> <fa-icon
-                        [icon]="xmark"></fa-icon> </button>
-
-            </div>
-        </li>
+        <ng-container *ngIf="savedDefinitions && savedDefinitions.length > 0; else noDefinitions">
+            <li *ngFor="let definition of savedDefinitions" class="definition-item">
+                {{ definition.word }} - {{ definition.savedAt | date }}
+                <div class="buttons">
+                    <button class="word-search-button" (click)="navigateToRootWithQuery(definition.word)">
+                        <fa-icon [icon]="search"></fa-icon>
+                    </button>
+                    <button class="remove-button" (click)="removeDefinition(definition.word)">
+                        <fa-icon [icon]="xmark"></fa-icon>
+                    </button>
+                </div>
+            </li>
+        </ng-container>
+        <ng-template #noDefinitions>
+            <div class="no-saved-words">No Saved Definitions Found</div>
+        </ng-template>
     </ul>
 </div>
