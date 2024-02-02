@@ -21,7 +21,9 @@ export class SavedDifinitionsComponent implements OnInit {
     loadSavedDefinitions(): void {
         const savedDefinitionsString = localStorage.getItem("savedDefinitions");
         if (savedDefinitionsString) {
-            this.savedDefinitions = JSON.parse(savedDefinitionsString);
+            this.savedDefinitions = (
+                JSON.parse(savedDefinitionsString) as SavedDefinition[]
+            ).sort((a, b) => a.word.localeCompare(b.word));
         }
     }
 
