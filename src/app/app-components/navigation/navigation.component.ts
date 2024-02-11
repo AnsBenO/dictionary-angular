@@ -11,7 +11,7 @@ export class NavigationComponent {
     bars = faBars;
     isHidden: boolean = true;
 
-    handleClick(event: Event) {
+    hideDropdown(event: Event) {
         // Stop event propagation
         event.stopPropagation();
         this.isHidden = !this.isHidden;

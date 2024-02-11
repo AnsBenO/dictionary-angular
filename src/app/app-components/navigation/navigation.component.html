@@ -1,24 +1,24 @@
 <div class="navigation">
     <nav>
         <ul class="links">
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/saved-definitions">Saved Definitions</a></li>
-            <li><a routerLink="/about">About</a></li>
+            <li><a routerLink="/" (click)="hideDropdown($event)">Home</a></li>
+            <li><a routerLink="/saved-definitions " (click)="hideDropdown($event)">Saved Definitions</a></li>
+            <li><a routerLink="/about" (click)="hideDropdown($event)">About</a></li>
         </ul>
         <a href="https://github.com/AnsBenO/dictionary-angular" class="action_btn" target="_blank" rel="noreferrer">Git
             Hub</a>
-        <div class="toggle_btn" [ngClass]="{'active': !isHidden}" (click)="handleClick($event)">
+        <div class="toggle_btn" [ngClass]="{'active': !isHidden}" (click)="hideDropdown($event)">
             <fa-icon *ngIf="isHidden" [icon]="bars" class="toggle-icon"></fa-icon>
             <fa-icon *ngIf="!isHidden" [icon]="xMark" class="toggle-icon"></fa-icon>
         </div>
     </nav>
     <div class="dropdown_menu" id="dropdown_menu" [ngClass]="{'active': !isHidden}">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/saved-definitions">Saved Definitions</a></li>
-        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/" (click)="hideDropdown($event)">Home</a></li>
+        <li><a routerLink="/saved-definitions" (click)="hideDropdown($event)">Saved Definitions</a></li>
+        <li><a routerLink="/about" (click)="hideDropdown($event)">About</a></li>
         <li>
-            <a href="https://github.com/AnsBenO/dictionary-angular" class="action_btn" target="_blank"
-                rel="noreferrer">Git Hub</a>
+            <a (click)="hideDropdown($event)" href="https://github.com/AnsBenO/dictionary-angular" class="action_btn"
+                target="_blank" rel="noreferrer">Git Hub</a>
         </li>
     </div>
 </div>
