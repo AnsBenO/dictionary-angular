@@ -23,10 +23,12 @@ export class NavigationComponent {
         const navigationElement = document.querySelector(
             ".dropdown_menu.active"
         );
+        const toggleBtn = document.querySelector(".toggle_btn");
 
         if (
             navigationElement &&
-            !navigationElement.contains(event.target as Node)
+            !navigationElement.contains(event.target as Node) &&
+            !toggleBtn?.contains(event.target as Node)
         ) {
             this.isHidden = true;
         }
