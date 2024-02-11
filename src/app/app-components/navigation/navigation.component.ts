@@ -18,6 +18,7 @@ export class NavigationComponent {
     }
 
     @HostListener("document:click", ["$event"])
+    @HostListener("document:touchstart", ["$event"])
     handleOutsideClick(event: Event) {
         const navigationElement = document.querySelector(
             ".dropdown_menu.active"
