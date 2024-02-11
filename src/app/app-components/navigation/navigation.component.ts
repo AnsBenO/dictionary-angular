@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 import { faXmark, faBars } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -11,7 +11,23 @@ export class NavigationComponent {
     bars = faBars;
     isHidden: boolean = true;
 
-    handleClick() {
+    handleClick(event: Event) {
+        // Stop event propagation
+        event.stopPropagation();
         this.isHidden = !this.isHidden;
+    }
+
+    @HostListener("document:click", ["$event"])
+    handleOutsideClick(event: Event) {
+        const navigationElement = document.querySelector(
+            ".dropdown_menu.active"
+        );
+
+        if (
+            navigationElement &&
+            !navigationElement.contains(event.target as Node)
+        ) {
+            this.isHidden = true;
+        }
     }
 }
