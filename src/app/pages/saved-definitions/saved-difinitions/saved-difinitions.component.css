@@ -44,39 +44,6 @@ ul {
     margin: 20px 0;
 }
 
-.definition-item {
-    background-color: var(--bg);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid var(--dark-gray);
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.definition-item:hover {
-    background-color: var(--light-gray);
-}
-
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.remove-button,
-.word-search-button {
-    border: none;
-    background: none;
-    font-size: 15px;
-    cursor: pointer;
-    display: none;
-    color: var(--dark-gray);
-}
-
-.definition-item:hover .remove-button,
-.definition-item:hover .word-search-button {
-    display: block;
-}
 
 
 .no-saved-words {

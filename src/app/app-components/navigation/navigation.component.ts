@@ -24,7 +24,6 @@ export class NavigationComponent {
             ".dropdown_menu.active"
         );
         const toggleBtn = document.querySelector(".toggle_btn");
-
         if (
             navigationElement &&
             !navigationElement.contains(event.target as Node) &&

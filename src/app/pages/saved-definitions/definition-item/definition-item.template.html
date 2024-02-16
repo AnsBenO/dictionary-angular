@@ -1,0 +1,16 @@
+<li class="definition-item">
+    <div class="definition-container">
+        <div class="word-name" [innerHTML]="savedWord.word| highlightSearch : searchInput"></div>
+        <div class="saved-at">- {{ savedWord.savedAt| date }}</div>
+    </div>
+
+    <div class="buttons">
+        <button class="word-search-button" (click)="navigateToRootWithQuery(savedWord.word)">
+            <fa-icon [icon]="search"></fa-icon>
+        </button>
+        <button class="remove-button" (click)="removeDefinition()">
+            <fa-icon [icon]="xmark"></fa-icon>
+        </button>
+    </div>
+
+</li>

@@ -1,21 +1,15 @@
 <div class="saved-definitions-container">
     <h2 class="saved-definitions-title">Saved Definitions</h2>
-    <form #searchSaved="ngForm" (input)="searchDefinitions(searchSaved.value.searchInput)">
+    <form #searchSaved="ngForm">
         <input class="search-input" type="text" placeholder="Search for a word" name="searchInput" ngModel>
     </form>
     <ul>
         <ng-container *ngIf="savedDefinitions && savedDefinitions.length > 0; else noDefinitions">
-            <li *ngFor="let definition of savedDefinitions" class="definition-item">
-                {{ definition.word }} - {{ definition.savedAt | date }}
-                <div class="buttons">
-                    <button class="word-search-button" (click)="navigateToRootWithQuery(definition.word)">
-                        <fa-icon [icon]="search"></fa-icon>
-                    </button>
-                    <button class="remove-button" (click)="removeDefinition(definition.word)">
-                        <fa-icon [icon]="xmark"></fa-icon>
-                    </button>
-                </div>
-            </li>
+            <app-definition-item
+                *ngFor="let definition of savedDefinitions | filterDefinitions : searchSaved.value.searchInput"
+                (onRemove)="removeDefinition($event)" [savedWord]="definition"
+                [searchInput]="searchSaved.value.searchInput">
+            </app-definition-item>
         </ng-container>
         <ng-template #noDefinitions>
             <div class="no-saved-words">No Saved Definitions Found</div>
