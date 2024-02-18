@@ -9,6 +9,7 @@ import { take } from "rxjs";
 })
 export class SearchFormComponent implements OnInit {
     magnifying = faMagnifyingGlass;
+    wordQuery = "";
     @Output() searchSubmit = new EventEmitter<string>();
 
     constructor(private route: ActivatedRoute) {}
@@ -22,6 +23,7 @@ export class SearchFormComponent implements OnInit {
     ngOnInit(): void {
         this.route.queryParams.pipe(take(1)).subscribe(params => {
             if (params["search"]) {
+                this.wordQuery = params["search"];
                 this.searchSubmit.emit(params["search"]);
             }
         });
