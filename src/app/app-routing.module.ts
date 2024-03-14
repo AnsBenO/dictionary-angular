@@ -1,13 +1,24 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AboutComponent } from "./pages/about/about/about.component";
-import { SavedDifinitionsComponent } from "./pages/saved-definitions/saved-difinitions/saved-difinitions.component";
-import { HomeComponent } from "./pages/home/home/home.component";
 
 const routes: Routes = [
-    { path: "", component: HomeComponent },
-    { path: "saved-definitions", component: SavedDifinitionsComponent },
-    { path: "about", component: AboutComponent },
+    {
+        path: "",
+        loadChildren: () =>
+            import("./pages/home/home.module").then(m => m.HomeModule),
+    },
+    {
+        path: "saved-definitions",
+        loadChildren: () =>
+            import("./pages/saved-definitions/saved-definitions.module").then(
+                m => m.SavedDefinitionsModule
+            ),
+    },
+    {
+        path: "about",
+        loadChildren: () =>
+            import("./pages/about/about.module").then(m => m.AboutModule),
+    },
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ import {
     of,
 } from "rxjs";
 @Injectable({
-    providedIn: "root",
+    providedIn: "any",
 })
 export class SearchService {
     private apiUrl = environment.apiUrl;

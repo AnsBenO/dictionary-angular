@@ -1,5 +1,3 @@
-// home.module.ts
-
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from "./home/home.component";
@@ -8,8 +6,8 @@ import { MessageComponent } from "./message/message.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { SearchFormComponent } from "./search-form/search-form.component";
 import { FormsModule } from "@angular/forms";
-import { SearchService } from "src/app/services/search.service";
 import { HttpClientModule } from "@angular/common/http";
+import { HomeRoutingModule } from "./home-routing.module";
 
 @NgModule({
     declarations: [
@@ -18,7 +16,13 @@ import { HttpClientModule } from "@angular/common/http";
         MessageComponent,
         DefinitionsComponent,
     ],
-    imports: [HttpClientModule, CommonModule, FontAwesomeModule, FormsModule],
-    providers: [SearchService],
+    imports: [
+        HttpClientModule,
+        CommonModule,
+        FontAwesomeModule,
+        FormsModule,
+        HomeRoutingModule,
+    ],
+    providers: [],
 })
 export class HomeModule {}

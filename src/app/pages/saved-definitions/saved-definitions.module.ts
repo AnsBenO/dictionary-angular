@@ -6,6 +6,7 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { FilterDefinitionsPipe } from "./pipes/filter-definitions.pipe";
 import { HighlightSearchPipe } from "./pipes/highlight-search.pipe";
 import { DefinitionItemComponent } from "./definition-item/definition-item.component";
+import { SavedDefinitionsRoutingModule } from "./saved-definitions-routing.module";
 
 @NgModule({
     declarations: [
@@ -14,6 +15,11 @@ import { DefinitionItemComponent } from "./definition-item/definition-item.compo
         FilterDefinitionsPipe,
         HighlightSearchPipe,
     ],
-    imports: [CommonModule, FormsModule, FontAwesomeModule],
+    imports: [
+        CommonModule,
+        FormsModule,
+        FontAwesomeModule,
+        SavedDefinitionsRoutingModule,
+    ],
 })
 export class SavedDefinitionsModule {}
