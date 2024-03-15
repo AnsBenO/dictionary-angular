@@ -3,9 +3,11 @@
         <app-toggle [(theme)]="theme" (themeChange)="saveThemeToLocalStorage()" />
         <app-navigation />
     </header>
-    <div *ngIf="showLoader">
-        <app-loader></app-loader>
-    </div>
-    <router-outlet></router-outlet>
+    <ng-container *ngIf="showLoader; else routerOutlet">
+        <app-loader />
+    </ng-container>
+    <ng-template #routerOutlet>
+        <router-outlet></router-outlet>
+    </ng-template>
 
 </main>
