@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { Theme } from "./types/Theme.enum";
+import { NavigationEnd, NavigationStart, Router } from "@angular/router";
 
 @Component({
     selector: "app-root",
@@ -12,6 +13,18 @@ export class AppComponent implements OnInit {
 
     saveThemeToLocalStorage() {
         localStorage.setItem("theme", this.theme);
+    }
+
+    showLoader: boolean = false;
+
+    constructor(private router: Router) {
+        router.events.subscribe(event => {
+            if (event instanceof NavigationStart) {
+                this.showLoader = true;
+            } else if (event instanceof NavigationEnd) {
+                this.showLoader = false;
+            }
+        });
     }
 
     ngOnInit(): void {

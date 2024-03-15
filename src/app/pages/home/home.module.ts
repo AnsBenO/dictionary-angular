@@ -8,6 +8,7 @@ import { SearchFormComponent } from "./search-form/search-form.component";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { HomeRoutingModule } from "./home-routing.module";
+import { LoaderComponent } from "src/app/app-components/loader/loader.component";
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { HomeRoutingModule } from "./home-routing.module";
         FontAwesomeModule,
         FormsModule,
         HomeRoutingModule,
+        LoaderComponent,
     ],
     providers: [],
 })

@@ -7,12 +7,18 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 import { ToggleComponent } from "./app-components/toggle/toggle.component";
 import { NavigationComponent } from "./app-components/navigation/navigation.component";
+import { LoaderComponent } from "./app-components/loader/loader.component";
 
 @NgModule({
     declarations: [AppComponent, ToggleComponent, NavigationComponent],
     providers: [],
 
     bootstrap: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        LoaderComponent,
+    ],
 })
 export class AppModule {}
