@@ -1,4 +1,7 @@
 <div class="message">
-    <fa-icon class="exclamation" *ngIf="isSubmitted" [icon]="exclamation"></fa-icon>
+    @if(isSubmitted){
+
+    <fa-icon class="exclamation" [icon]="exclamation" />
+    }
     {{isSubmitted ? "No definitions found":"Welcome to Web Dictionary!"}}
 </div>

@@ -4,15 +4,15 @@
         <input class="search-input" type="text" placeholder="Search for a word" name="searchInput" ngModel>
     </form>
     <ul>
-        <ng-container *ngIf="savedDefinitions && savedDefinitions.length > 0; else noDefinitions">
-            <app-definition-item
-                *ngFor="let definition of savedDefinitions | filterDefinitions : searchSaved.value.searchInput"
-                (onRemove)="removeDefinition($event)" [savedWord]="definition"
-                [searchInput]="searchSaved.value.searchInput">
-            </app-definition-item>
-        </ng-container>
-        <ng-template #noDefinitions>
-            <div class="no-saved-words">No Saved Definitions Found</div>
-        </ng-template>
+        @if(savedDefinitions && savedDefinitions.length > 0){
+        @for(definition of savedDefinitions | filterDefinitions : searchSaved.value.searchInput; track definition.word){
+        <app-definition-item (onRemove)="removeDefinition($event)" [savedWord]="definition"
+            [searchInput]="searchSaved.value.searchInput">
+        </app-definition-item>
+        }
+        }@else{
+        <div class="no-saved-words">No Saved Definitions Found</div>
+        }
+
     </ul>
 </div>

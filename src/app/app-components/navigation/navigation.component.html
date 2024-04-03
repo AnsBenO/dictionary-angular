@@ -8,8 +8,11 @@
         <a href="https://github.com/AnsBenO/dictionary-angular" class="action_btn" target="_blank" rel="noreferrer">Git
             Hub</a>
         <div class="toggle_btn" [ngClass]="{'active': !isHidden}" (click)="hideDropdown($event)">
-            <fa-icon *ngIf="isHidden" [icon]="bars" class="toggle-icon"></fa-icon>
-            <fa-icon *ngIf="!isHidden" [icon]="xMark" class="toggle-icon"></fa-icon>
+            @if(isHidden){
+            <fa-icon [icon]="bars" class="toggle-icon" />
+            }@else{
+            <fa-icon [icon]="xMark" class="toggle-icon" />
+            }
         </div>
     </nav>
     <div class="dropdown_menu" id="dropdown_menu" [ngClass]="{'active': !isHidden}">

@@ -1,8 +1,15 @@
 <app-search-form (searchSubmit)="handleSearchSubmit($event)" />
 <div class="content">
-    <app-loader *ngIf="(searchService.isLoading$ | async)"></app-loader>
-    <app-definitions *ngIf="difinitionsData" [definitionsData]="difinitionsData || []"></app-definitions>
-    <ng-container *ngIf="!(searchService.isLoading$ | async)">
-        <app-message *ngIf="!(difinitionsData && difinitionsData.length)" [isSubmitted]="isSubmitted"></app-message>
-    </ng-container>
+    @if(searchService.isLoading$ | async){
+    <app-loader />
+    }
+    @if(difinitionsData){
+
+    <app-definitions [definitionsData]="difinitionsData || []" />
+    }
+    @if(!(searchService.isLoading$ | async)){
+
+    <app-message [isSubmitted]="isSubmitted"></app-message>
+    }
+
 </div>
