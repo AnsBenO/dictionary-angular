@@ -1,27 +1,50 @@
 <div class="navigation">
-    <nav>
-        <ul class="links">
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/saved-definitions">Saved Definitions</a></li>
-            <li><a routerLink="/about">About</a></li>
-        </ul>
-        <a href="https://github.com/AnsBenO/dictionary-angular" class="action_btn" target="_blank" rel="noreferrer">Git
-            Hub</a>
-        <div class="toggle_btn" [ngClass]="{'active': !isHidden}" (click)="hideDropdown($event)">
-            @if(isHidden){
-            <fa-icon [icon]="bars" class="toggle-icon" />
-            }@else{
-            <fa-icon [icon]="xMark" class="toggle-icon" />
-            }
-        </div>
-    </nav>
-    <div class="dropdown_menu" id="dropdown_menu" [ngClass]="{'active': !isHidden}">
-        <li><a routerLink="/" (click)="hideDropdown($event)">Home</a></li>
-        <li><a routerLink="/saved-definitions" (click)="hideDropdown($event)">Saved Definitions</a></li>
-        <li><a routerLink="/about" (click)="hideDropdown($event)">About</a></li>
-        <li>
-            <a (click)="hideDropdown($event)" href="https://github.com/AnsBenO/dictionary-angular" class="action_btn"
-                target="_blank" rel="noreferrer">Git Hub</a>
-        </li>
+  <nav>
+    <ul class="links">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/saved-definitions">Saved Definitions</a></li>
+      <li><a routerLink="/about">About</a></li>
+    </ul>
+    <a
+      href="https://github.com/AnsBenO/dictionary-angular"
+      class="action_btn"
+      target="_blank"
+      rel="noreferrer"
+      >Git Hub</a
+    >
+    <div
+      class="toggle_btn"
+      [ngClass]="{ active: !isHidden }"
+      (click)="hideDropdown($event)"
+    >
+      @if(isHidden){
+      <fa-icon [icon]="bars" class="toggle-icon" />
+      }@else{
+      <fa-icon [icon]="xMark" class="toggle-icon" />
+      }
     </div>
+  </nav>
+  <div
+    class="dropdown_menu"
+    id="dropdown_menu"
+    [ngClass]="{ active: !isHidden }"
+  >
+    <li><a routerLink="/" (click)="hideDropdown($event)">Home</a></li>
+    <li>
+      <a routerLink="/saved-definitions" (click)="hideDropdown($event)"
+        >Saved Definitions</a
+      >
+    </li>
+    <li><a routerLink="/about" (click)="hideDropdown($event)">About</a></li>
+    <li>
+      <a
+        (click)="hideDropdown($event)"
+        href="https://github.com/AnsBenO/dictionary-angular"
+        class="action_btn"
+        target="_blank"
+        rel="noreferrer"
+        >Git Hub</a
+      >
+    </li>
+  </div>
 </div>

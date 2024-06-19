@@ -1,15 +1,12 @@
 <app-search-form (searchSubmit)="handleSearchSubmit($event)" />
 <div class="content">
-    @if(searchService.isLoading$ | async){
-    <app-loader />
-    }
-    @if(difinitionsData){
+  @if(searchService.isLoading$ | async){
+  <app-loader />
+  } @if(difinitionsData){
 
-    <app-definitions [definitionsData]="difinitionsData || []" />
-    }
-    @if(!(searchService.isLoading$ | async)){
+  <app-definitions [definitionsData]="difinitionsData || []" />
+  } @else if(!(searchService.isLoading$ | async) ){
 
-    <app-message [isSubmitted]="isSubmitted"></app-message>
-    }
-
+  <app-message [isSubmitted]="isSubmitted"></app-message>
+  }
 </div>
